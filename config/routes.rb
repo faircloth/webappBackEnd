@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   namespace :api do
     resources :tags do
-      resources :articles
+      resources :articles, only: [:create, :update, :destroy]
     end
     resources :articles
   end

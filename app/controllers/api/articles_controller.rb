@@ -1,9 +1,14 @@
 class Api::ArticlesController < ApplicationController
   
   skip_before_filter :verify_authenticity_token
+  # before_filter :find_tag
 
   def index
-    render json: Article.all 
+    articles = Article.all 
+    # tags = Tag.all
+    render json: {
+      articles: articles,
+    }.to_json
   end
 
   def show
@@ -58,7 +63,7 @@ class Api::ArticlesController < ApplicationController
   end
 
   def find_tag
-    @tag = Article.find(params[:tag_id])
+    @tag = Article.find(params[:tag])
   end
   
 

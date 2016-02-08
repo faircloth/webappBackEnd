@@ -23,6 +23,9 @@
     <%= f.label :tag %><br>
     <%= f.text_field :tag %>
   </div>
+  <div class="select">
+    <p><%= @article.tag_names.inspect %></p>
+  </div>
   <div class="actions">
     <%= f.submit %>
   </div>

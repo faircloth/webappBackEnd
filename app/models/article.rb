@@ -3,4 +3,9 @@ class Article < ActiveRecord::Base
 
   validates :title, presence: true,
                       length: { minimum: 2 }
+
+  def tag_names
+    Tag.all.map { |tag| [tag.name, tag.id]}
+  end
+
 end
