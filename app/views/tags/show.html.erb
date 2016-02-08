@@ -1,8 +1,17 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Name:</strong>
+  <strong>Tag:</strong>
   <%= @tag.name %>
+</p>
+
+<p>
+  <strong>Articles:</strong>
+  <ul>
+    <% @tag.get_articles(@tag.name).each do |article| %>
+      <li><%= article.title %></li>
+    <% end %>
+  </ul>
 </p>
 
 <%= link_to 'Edit', edit_tag_path(@tag) %> |

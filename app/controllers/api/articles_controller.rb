@@ -53,9 +53,10 @@ class Api::ArticlesController < ApplicationController
   private
   
   def article_params
-    params.require("article").permit("title")
+    # params.require("article").permit("title")
+    params.require(:article).permit(:title, :description, :tag)
   end
-  
+
   def find_tag
     @tag = Article.find(params[:tag_id])
   end
