@@ -36,6 +36,9 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 # Use puma as our webserver
 gem 'puma'
 
+# Communicating with the front-end
+gem 'rack-cors'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
