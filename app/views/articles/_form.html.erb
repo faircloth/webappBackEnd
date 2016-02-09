@@ -19,13 +19,14 @@
     <%= f.label :description %><br>
     <%= f.text_area :description %>
   </div>
-  <div class="field">
-    <%= f.label :tag %><br>
-    <%= f.text_field :tag %>
-  </div>
+  
   <div class="select">
-    <p><%= @article.tag_names.inspect %></p>
+    <%= f.label :tag %><br>
+    <select name="@article[:tag]" class="tag_select">
+      <%=  options_for_select(@article.tag_hash) %>
+    </select>
   </div>
+
   <div class="actions">
     <%= f.submit %>
   </div>
