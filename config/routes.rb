@@ -1,15 +1,11 @@
 Rails.application.routes.draw do
   namespace :api do
     resources :tags do
-      resources :articles, only: [:create, :update, :destroy]
-    end
     resources :articles
   end
 
   resources :articles
-  resources :tags do
-    resources :articles
-  end
+  resources :tags
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
