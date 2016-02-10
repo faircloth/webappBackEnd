@@ -1,5 +1,14 @@
 <h1>New Article</h1>
 
+<h3>New form</h3>
+<%= form_for(@article, builder: FoundationFormBuilder) do |f| %>
+  <%= f.text_field :title, label: "Article Title", autofocus: 'autofocus' %>
+  <%= f.submit "Create" %>
+<% end %>
+
+
+<hr>
+<h3>Old form</h3>
 <%= render 'form' %>
 
 <%= link_to 'Back', articles_path %>

@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Subjects</h1>
+
+<% @subjects.each do |subject| %>
+<div class="subjects">
+  <h3>Tag_id: <%= subject.tag_id %></h3>
+  <p>Article_id: <%= subject.article_id %></p>
+  <%= link_to 'Show', subject_path(subject) %>
+</div>
+<% end %>
+ 
+
+
+<%= link_to 'New Subject', new_subject_path %>

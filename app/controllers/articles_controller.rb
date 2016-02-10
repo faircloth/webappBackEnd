@@ -28,6 +28,12 @@ class ArticlesController < ApplicationController
 
     respond_to do |format|
       if @article.save
+
+        Subject.create({
+          :article_id => @article.id,
+          :tag_id => params[:article][:tag]
+        })
+
         format.html { redirect_to @article, notice: 'Article was successfully created.' }
         format.json { render :show, status: :created, location: @article }
       else

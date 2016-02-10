@@ -3,14 +3,13 @@ class Api::TagsController < ApplicationController
   skip_before_filter :verify_authenticity_token
 
   def index
-    render json: Tag.all 
+    tags = Tag.all 
+    render json: tags.as_json(include: :articles)
   end
 
   def show
     tag = Tag.find(params[:id])
-    render json: tag
-    # not working to include articles
-    # render json: tag.as_json(include::articles)
+    render json: tag.as_json(include: :articles)
   end
 
   def create

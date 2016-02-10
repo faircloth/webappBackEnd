@@ -2,6 +2,8 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-div.select {
-  select.tag_select {color: blue;}
+// Show all page
+div.articles {
+  border-bottom: 1px solid black;
+  padding: 15px 0px;
 }

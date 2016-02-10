@@ -1,0 +1,10 @@
+<h1>New Subject</h1>
+
+<h3>New form</h3>
+<%= form_for(@subject, builder: FoundationFormBuilder) do |f| %>
+  <%= f.text_field :article_id, label: "Article Id", autofocus: 'autofocus' %>
+   <%= f.text_field :tag_id, label: "Tag Id", autofocus: 'autofocus' %>
+  <%= f.submit "Create" %>
+<% end %>
+
+<%= link_to 'Back', subjects_path %>
